@@ -31,7 +31,7 @@ bot.on('message', msg => {
 
     if (text === '/gain' || text === 'Набор' || text === 'набор') {
         bot.sendMessage(chatId, `${textDietType} набора веса. ${textWeight}`);
-        return text, electPlan = gainWeight;
+        return text, selectPlan = gainWeight;
     };
 
     //Get Weight
@@ -65,6 +65,8 @@ bot.on('message', msg => {
 
 Обратите внимание, масса рекомендуемого рациона НЕ является массой конечного продукта!    
 `;
-    bot.sendMessage(chatId, textDiet);
+    if (text != '/start') {
+        bot.sendMessage(chatId, textDiet);
+    }
 });
 
